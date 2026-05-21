@@ -5,6 +5,7 @@ import config from './app/config';
 import { seedAdmin } from './app/utils/seedAdmin';
 import http from 'http';
 import { initSocket } from './app/Socket/socket';
+import { connectMikrotik } from './app/utils/connectMikrotik';
 
 let server: Server;
 
@@ -18,10 +19,7 @@ async function startServer() {
       maxIdleTimeMS: 30000,
     });
 
-    // server = app.listen(config.port, () => {
-    //   console.log(`Example app listening on port ${config.port}`);
-    // });
-
+    await connectMikrotik();
     seedAdmin();
 
     const httpServer = http.createServer(app);

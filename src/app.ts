@@ -7,7 +7,7 @@ import notFoundHandler from './app/middleware/notFoundHandler';
 import helmet from 'helmet';
 import morgan from 'morgan';
 import config from './app/config';
-import { rootRouter } from './app/router';
+// import { rootRouter } from './app/router';
 
 const app: Application = express();
 
@@ -62,7 +62,7 @@ app.use((req: Request, res: Response, next: NextFunction): void => {
   next();
 });
 
-app.use('/api/v1', rootRouter);
+// app.use('/api/v1', rootRouter);
 
 app.use(globalErrorHandler);
 app.use(notFoundHandler);

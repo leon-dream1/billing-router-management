@@ -9,6 +9,12 @@ export default {
   database_url: process.env.DATABASE_URL,
   node_env: process.env.NODE_ENV,
   port: process.env.PORT,
+  mikrotik: {
+    host: process.env.MIKROTIK_HOST || '192.168.88.1',
+    user: process.env.MIKROTIK_USER || 'admin',
+    password: process.env.MIKROTIK_PASSWORD || '',
+    port: parseInt(process.env.MIKROTIK_PORT || '8728'), // Default RouterOS API port
+  },
   jwt_access_secret: process.env.JWT_ACCESS_SECRET,
   jwt_refresh_secret: process.env.JWT_REFRESH_SECRET,
   jwt_reset_secret: process.env.JWT_RESET_SECRET,
